@@ -27,7 +27,7 @@ function arrayIteration (array){
     deleteBtn.addEventListener("click", ()=> card.remove());
 
     deleteBtn.className = "delete-btn card-btn";
-    readBtn.className = `read-btn card-btn`;
+    readBtn.className = `card-btn read-btn`;
     deleteBtn.textContent = "Delete";
     if(array[i - 2].read == true){
         readBtn.textContent = "Read";
@@ -37,7 +37,6 @@ function arrayIteration (array){
         readBtn.textContent = " Not Read";
         readBtn.style.backgroundColor = "#f43f5e";
     }
-    readBtn.addEventListener("click", hasReadToggle);
 
     authorText.textContent = `Author: ${array[i - 2].author}`;
     titleText.textContent = `Title: ${array[i - 2].title}`;
@@ -66,7 +65,7 @@ sumbitBtn.addEventListener("click", () => {
     hasReadCheckbox();
     myLibrary.push(addBook());
     arrayIteration(myLibrary);
-    console.log(myLibrary);
+    readBtn.addEventListener("click", hasReadToggle);
 })
 
 const closeBtn = document.getElementById("close");
@@ -85,15 +84,17 @@ function hasReadCheckbox(){
     }
 }
 
-function hasReadToggle(){
+function hasReadToggle(e){
+    let btnPressed = e.target;
+    let btnPressedText = e.target.textContent;
     if(hasRead == false){
-        readBtn.style.backgroundColor = "#22c55e";
-        readBtn.textContent = "Read"
+        btnPressed.style.backgroundColor = "#22c55e";
+        btnPressed.textContent = "Read"
         hasRead = true;
     }
     else if (hasRead == true){
-        readBtn.style.backgroundColor = "#f43f5e";
-        readBtn.textContent = "Not Read";
+        btnPressed.style.backgroundColor = "#f43f5e";
+        btnPressed.textContent = "Not Read";
         hasRead = false;
     } 
 }
