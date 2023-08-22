@@ -14,11 +14,24 @@
     <main>
         <button class="add-book">Add Book<br><span>+</span></button>
         <div class="book-container">
-            <div class="book-card"></div>
-            <div class="book-card"></div>
-            <div class="book-card"></div>
         </div>
     </main>
+    <dialog class="modal">
+        <form action="#" method="dialog">
+            <label for="author">Author</label><br>
+            <input type="text" name="Author" id="author"><br>
+            
+            <label for="title">Title</label><br>
+            <input type="text" id="title" name="Title"><br>
+
+            <label for="pages">Pages</label><br>
+            <input type="number" name="Pages" id="pages"><br>
+
+            <button id="read" type="button" class="not-read">Not Read</button><br>
+            <button id="submit-button" type="submit">Submit</button>
+            <button id="close">close</button>
+        </form>
+    </dialog>
     <script src="script.js"></script>
 </body>
 </html>
