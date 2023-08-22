@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 body{
     margin: 0;
@@ -31,6 +32,16 @@ header{
 .add-book{
     justify-self: center;
     align-self: center;
+    background-color: transparent;
+    border-style: none;
+    font-size: 1.5rem;
+}
+.add-book:hover{
+    transition: .2s;
+    background-color: #22c55e;
+}
+.add-book:focus{
+    outline: none;
 }
 main{
     display: flex;
@@ -38,9 +49,35 @@ main{
     gap: 20px;
     background-color: #d1d5db;
     min-height: 88vh;
-    padding: 20px 0;
+    padding: 50px 0;
 }
 p{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 0;
+}
+.card-btn{
+    width: 80%;
+    height: 30px;
+    border-style: none;
+}
+.card-btn:hover{
+    transition: .2s;
+    font-size: 1.4rem;
+}
+button{
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+.log-in{
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+}
+.log-in:hover{
+    background-color: #d1d5db;
+    transition: .2s;
+}
+.log-in:focus{
+    outline: none;
 }

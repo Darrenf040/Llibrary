@@ -14,19 +14,31 @@ function addBook(){
     const book = new Book(author, title, pages, hasRead);
     return book;
 }
+
 function arrayIteration (array){
     const card = document.querySelector(`.card${i - 1}`);
     const authorText = document.createElement("p");
     const titleText = document.createElement("p");
     const pageText = document.createElement("p");
     const readBtn = document.createElement("button");
+    const deleteBtn = document.createElement("button");
 
-    array[i - 2].read == true ? readBtn.textContent = "Read": readBtn.textContent = " Not Read";
+    deleteBtn.className = "delete-btn card-btn";
+    readBtn.className = `read-btn card-btn`;
+    deleteBtn.textContent = "Delete";
+    if(array[i - 2].read == true){
+        readBtn.textContent = "Read";
+        readBtn.style.backgroundColor = "#22c55e";
+    } 
+    else{
+        readBtn.textContent = " Not Read";
+        readBtn.style.backgroundColor = "#f43f5e";
+    }
 
     authorText.textContent = `Author: ${array[i - 2].author}`;
     titleText.textContent = `Title: ${array[i - 2].title}`;
     pageText.textContent = `Pages: ${array[i - 2].pages}`;
-    card.append(authorText, titleText, pageText, readBtn);
+    card.append(authorText, titleText, pageText, readBtn, deleteBtn);
 }
 
 let i = 1;
@@ -47,11 +59,10 @@ const sumbitBtn = document.getElementById("submit-button");
 sumbitBtn.addEventListener("click", () => {
     modal.close();
     createCard();
-    hasReadToggle();
+    hasReadCheckbox();
     myLibrary.push(addBook());
     arrayIteration(myLibrary);
     console.log(myLibrary);
-
 })
 
 const closeBtn = document.getElementById("close");
@@ -60,7 +71,7 @@ closeBtn.addEventListener("click", () => {
 })
 
 let hasRead = false;
-function hasReadToggle(){
+function hasReadCheckbox(){
     const readChecked = document.getElementById("read").checked;
     if(readChecked == true){
         hasRead = true;
@@ -69,3 +80,19 @@ function hasReadToggle(){
         hasRead = false;
     }
 }
+
+function hasReadToggle(){
+    if(hasRead == false){
+        // readBtn.className = "read";
+        readBtn.textContent = "Read"
+        hasRead = true;
+    }
+    else if (hasRead == true){
+        // readBtn.className = "not-read";
+        readBtn.textContent = "Not Read";
+        hasRead = false;
+    } 
+}
+// readBtn.addEventListener("click", hasReadToggle);
+
+
