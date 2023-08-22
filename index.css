@@ -82,10 +82,14 @@ button{
     outline: none;
 }
 
+
 .modal{
     font-size: 1.5rem;
+    padding: 0;
+    border: none;
 }
 .modal > form{
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;

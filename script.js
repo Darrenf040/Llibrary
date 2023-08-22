@@ -99,4 +99,4 @@ function hasReadToggle(e){
     } 
 }
 
-
+window.addEventListener("click", e => e.target.matches("dialog") ? modal.close(): 0);
