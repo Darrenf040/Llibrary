@@ -19,11 +19,14 @@ function arrayIteration (array){
     const authorText = document.createElement("p");
     const titleText = document.createElement("p");
     const pageText = document.createElement("p");
+    const readBtn = document.createElement("button");
+
+    array[i - 2].read == true ? readBtn.textContent = "Read": readBtn.textContent = " Not Read";
 
     authorText.textContent = `Author: ${array[i - 2].author}`;
     titleText.textContent = `Title: ${array[i - 2].title}`;
     pageText.textContent = `Pages: ${array[i - 2].pages}`;
-    card.append(authorText, titleText, pageText);
+    card.append(authorText, titleText, pageText, readBtn);
 }
 
 let i = 1;
@@ -44,9 +47,11 @@ const sumbitBtn = document.getElementById("submit-button");
 sumbitBtn.addEventListener("click", () => {
     modal.close();
     createCard();
+    hasReadToggle();
     myLibrary.push(addBook());
     arrayIteration(myLibrary);
     console.log(myLibrary);
+
 })
 
 const closeBtn = document.getElementById("close");
@@ -54,18 +59,13 @@ closeBtn.addEventListener("click", () => {
     modal.close();
 })
 
-const readBtn = document.getElementById("read");
 let hasRead = false;
 function hasReadToggle(){
-    if(readBtn.className == "not-read"){
-        readBtn.className = "read";
-        readBtn.textContent = "Read"
+    const readChecked = document.getElementById("read").checked;
+    if(readChecked == true){
         hasRead = true;
     }
-    else if (readBtn.className == "read"){
-        readBtn.className = "not-read";
-        readBtn.textContent = "Not Read";
+    else if (readChecked == false){
         hasRead = false;
     }
 }
-readBtn.addEventListener("click",hasReadToggle);
