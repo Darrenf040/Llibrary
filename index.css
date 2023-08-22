@@ -68,6 +68,7 @@ button{
     cursor: pointer;
     font-size: 1.2rem;
     border-radius: 10px;
+    border: none;
 }
 .log-in{
     padding: 10px;

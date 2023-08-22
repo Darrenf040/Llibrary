@@ -15,13 +15,16 @@ function addBook(){
     return book;
 }
 
+let delteBtn;
+let readBtn;
 function arrayIteration (array){
     const card = document.querySelector(`.card${i - 1}`);
     const authorText = document.createElement("p");
     const titleText = document.createElement("p");
     const pageText = document.createElement("p");
-    const readBtn = document.createElement("button");
-    const deleteBtn = document.createElement("button");
+    readBtn = document.createElement("button");
+    deleteBtn = document.createElement("button");
+    deleteBtn.addEventListener("click", ()=> card.remove());
 
     deleteBtn.className = "delete-btn card-btn";
     readBtn.className = `read-btn card-btn`;
@@ -34,6 +37,7 @@ function arrayIteration (array){
         readBtn.textContent = " Not Read";
         readBtn.style.backgroundColor = "#f43f5e";
     }
+    readBtn.addEventListener("click", hasReadToggle);
 
     authorText.textContent = `Author: ${array[i - 2].author}`;
     titleText.textContent = `Title: ${array[i - 2].title}`;
@@ -83,16 +87,15 @@ function hasReadCheckbox(){
 
 function hasReadToggle(){
     if(hasRead == false){
-        // readBtn.className = "read";
+        readBtn.style.backgroundColor = "#22c55e";
         readBtn.textContent = "Read"
         hasRead = true;
     }
     else if (hasRead == true){
-        // readBtn.className = "not-read";
+        readBtn.style.backgroundColor = "#f43f5e";
         readBtn.textContent = "Not Read";
         hasRead = false;
     } 
 }
-// readBtn.addEventListener("click", hasReadToggle);
 
 
