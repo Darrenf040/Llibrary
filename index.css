@@ -82,3 +82,41 @@ button{
 .log-in:focus{
     outline: none;
 }
+
+.modal{
+    font-size: 1.5rem;
+}
+.modal > form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.modal::backdrop{
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+}
+.read-container{
+    display: flex;
+    gap: 5px;
+}
+#read{
+    width: 50px;
+}
+input{
+    height:25px;
+    font-size: 1.2rem;
+}
+input:focus{
+    outline-color:#22c55e;
+}
+form > button {
+    font-size: 1.5rem;
+}
+#submit-button:hover{
+    transition: .1s;
+    background-color: #22c55e;
+}
+#close:hover{
+    transition: .1s;
+    background-color:#f43f5e;
+}
