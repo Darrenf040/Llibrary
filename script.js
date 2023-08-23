@@ -52,6 +52,14 @@ function createCard (){
     bookContainer.appendChild(bookCard);
     i++;
 }
+function clearInput(){
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach(input => {
+        input.value = "";
+    })
+    const checkbox = document.getElementById("read");
+    checkbox.checked = false;
+}
 
 const addBtn = document.querySelector(".add-book");
 const modal = document.querySelector(".modal");
@@ -66,6 +74,7 @@ sumbitBtn.addEventListener("click", () => {
     myLibrary.push(addBook());
     arrayIteration(myLibrary);
     readBtn.addEventListener("click", hasReadToggle);
+    clearInput();
 })
 
 const closeBtn = document.getElementById("close");
@@ -99,4 +108,5 @@ function hasReadToggle(e){
     } 
 }
 
+//close popup if clicked outside of it
 window.addEventListener("click", e => e.target.matches("dialog") ? modal.close(): 0);
