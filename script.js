@@ -95,13 +95,13 @@ function hasReadCheckbox(){
 
 function hasReadToggle(e){
     let btnPressed = e.target;
-    let btnPressedText = e.target.textContent;
-    if(hasRead == false){
+    let btnPressedText = e.target.innerText;
+    if(btnPressedText == "Not Read"){
         btnPressed.style.backgroundColor = "#22c55e";
         btnPressed.textContent = "Read"
         hasRead = true;
     }
-    else if (hasRead == true){
+    else if (btnPressedText == "Read"){
         btnPressed.style.backgroundColor = "#f43f5e";
         btnPressed.textContent = "Not Read";
         hasRead = false;
