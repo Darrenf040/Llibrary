@@ -7,14 +7,14 @@ class Book{
         this.pages = pages;
         this.hasRead = hasRead;
     }
-}
-function addBook(){
-    const author = document.getElementById("author").value;
-    const title = document.getElementById("title").value;
-    const pages = document.getElementById("pages").value;
-
-    const book = new Book(author, title, pages, hasRead);
-    return book;
+    addBook(){
+        const author = document.getElementById("author").value;
+        const title = document.getElementById("title").value;
+        const pages = document.getElementById("pages").value;
+    
+        const book = new Book(author, title, pages, hasRead);
+        return book;
+    }
 }
 
 let delteBtn;
@@ -70,10 +70,11 @@ addBtn.addEventListener("click", () => {
 })
 const sumbitBtn = document.getElementById("submit-button");
 sumbitBtn.addEventListener("click", () => {
+    const book = new Book();
     modal.close();
     createCard();
     hasReadCheckbox();
-    myLibrary.push(addBook());
+    myLibrary.push(book.addBook());
     arrayIteration(myLibrary);
     readBtn.addEventListener("click", hasReadToggle);
     clearInput();
