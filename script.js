@@ -1,10 +1,12 @@
 const myLibrary = [];
 
-function Book(author, title, pages, read){
-    this.author = author;
-    this.title = title;
-    this.pages = pages;
-    this.read = read;
+class Book{
+    constructor(author, title, pages, hasRead){
+        this.author = author;
+        this.title = title;
+        this.pages = pages;
+        this.hasRead = hasRead;
+    }
 }
 function addBook(){
     const author = document.getElementById("author").value;
@@ -110,3 +112,4 @@ function hasReadToggle(e){
 
 //close popup if clicked outside of it
 window.addEventListener("click", e => e.target.matches("dialog") ? modal.close(): 0);
+
