@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>Library App</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <img src="book-icon.png" alt="" class="logo">
-        <button class="log-in">Log In</button>
+      <img src="book-icon.png" alt="" class="logo" />
+      <button class="log-in">Log In</button>
     </header>
     <main>
-        <button class="add-book">Add Book<br><span>+</span></button>
-        <div class="book-container">
-        </div>
+      <button class="add-book">Add Book<br /><span>+</span></button>
+      <div class="book-container"></div>
     </main>
-        <dialog class="modal">
-            <form action="#" method="dialog">
-                <label for="author">Author</label>
-                <input type="text" name="Author" id="author" placeholder="Author">
-                
-                <label for="title">Title</label>
-                <input type="text" id="title" name="Title" placeholder="Title">
+    <dialog class="modal">
+      <form action="#">
+        <label for="author">Author</label>
+        <input
+          type="text"
+          name="Author"
+          id="author"
+          placeholder="Author"
+          class="required-input"
+        />
 
-                <label for="pages">Pages</label>
-                <input type="number" name="Pages" id="pages" placeholder="Pages">
-            <div class="read-container">
-                <label for="read">Have you read this?</label>
-                <input type="checkbox" name="Has-Read" id="read">
-            </div>
-                <button id="submit-button" type="submit">Submit</button>
-                <button id="close">Close</button>
-            </form>
-        </dialog>
+        <label for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="Title"
+          placeholder="Title"
+          class="required-input"
+        />
+
+        <label for="pages">Pages</label>
+        <input
+          type="number"
+          name="Pages"
+          id="pages"
+          placeholder="Pages"
+          class="required-input"
+        />
+        <div class="read-container">
+          <label for="read">Have you read this?</label>
+          <input type="checkbox" name="Has-Read" id="read" />
+        </div>
+        <button id="submit-button" type="submit">Submit</button>
+        <button id="close">Close</button>
+      </form>
+    </dialog>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
